@@ -1,0 +1,399 @@
+/*------------------
+     VARIABLES
+-------------------*/
+:root {
+  --clr-p-pale-violet-sub-heading-at-top-of-the-app-UI: hsl(276, 100%, 81%);
+  --clr-p-moderate-violet-chat-on-left: hsl(276, 55%, 52%);
+  --clr-p-desaturated-dark-violet-chat-on-right: hsl(271, 15%, 43%);
+  --clr-p-grayish-blue-placeholder-text: hsl(206, 6%, 79%);
+  --clr-p-very-dark-desaturated-violet-main-heading: hsl(271, 36%, 24%);
+  --clr-p-dark-grayish-violet-parag: hsl(270, 7%, 64%);
+
+  --clr-linear-g: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  --clr-linear-g-price-container: linear-gradient(
+    to right,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  --clr-linear-hero-bg: linear-gradient(
+    to bottom,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+
+  --clr-n-white: hsl(0, 0%, 100%);
+  --clr-n-light-grayish-violet-app-bg: hsl(270, 20%, 96%);
+  --clr-n-very-dark-desaturated-violet-submit-btn-bg: hsl(271, 36%, 24%);
+  --clr-n-very-light-magenta-radio-button-outline: hsl(289, 100%, 72%);
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --br-hero-bg: 0 0 80% 50%;
+  --br-hero-bg-desktop: 0 0 50% 50%;
+  --br-hero-bg-desktop-light: 50% 50% 0 0;
+  --br-phone: 2rem;
+  --br-circle: 50%;
+  --br-phone-top: 1.5rem 1.5rem 0.2rem 0.2rem;
+  --br-oblong-white: 100px;
+  --br-messages: 0.5rem;
+  --br-phone-bottom: 0 0 1.7rem 1.7rem;
+  --br-price-container: 0.5rem 0.5rem 0.5rem 0.2rem;
+  --br-input: 100px;
+}
+/*------------------
+     RESET
+-------------------*/
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*------------------
+     GLOBAL STYLES
+-------------------*/
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--clr-n-light-grayish-violet-app-bg);
+  color: var(--clr-p-dark-grayish-violet-parag);
+}
+img {
+  max-width: 100%;
+}
+h1 {
+  color: var(--clr-p-very-dark-desaturated-violet-main-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 0.8rem;
+  color: var(--clr-n-white);
+}
+h3 {
+  font-size: 0.8rem;
+}
+p {
+  line-height: 1.4;
+  font-size: 1.05rem;
+}
+button {
+  border: none;
+  outline: none;
+}
+
+/*------------------
+     HERO
+-------------------*/
+.hero {
+  position: relative;
+  margin-bottom: 8rem;
+}
+.bg-color {
+  width: 80dvw;
+  height: 30rem;
+  background: var(--clr-linear-hero-bg);
+  border-radius: var(--br-hero-bg);
+  margin-left: -7rem;
+}
+
+/*------------------
+     PHONE
+-------------------*/
+.phone {
+  width: 256px;
+  background-color: var(--clr-n-white);
+  border-radius: var(--br-phone);
+  height: 30.5rem;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.phone-top {
+  position: relative;
+  width: 238px;
+  height: 4.5rem;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-linear-g);
+  border-radius: var(--br-phone-top);
+}
+.oblong-white {
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--clr-n-white);
+  width: 9rem;
+  height: 2rem;
+  border-radius: var(--br-oblong-white);
+}
+.avatar-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.avatar-content-container-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.arrow {
+  border: solid var(--clr-n-white);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(134deg);
+  -webkit-transform: rotate(134deg);
+}
+.avatar-img {
+  border-radius: var(--br-circle);
+  border: 2px solid var(--clr-n-white);
+  width: 12%;
+}
+.avatar-content p {
+  font-size: 0.6rem;
+  color: var(--clr-p-pale-violet-sub-heading-at-top-of-the-app-UI);
+}
+
+.three-dots {
+  display: grid;
+  gap: 0.1rem;
+}
+.dot {
+  width: 0.15rem;
+  height: 0.15rem;
+  background-color: var(--clr-n-white);
+  border-radius: var(--br-circle);
+}
+.phone-bottom {
+  background-color: var(--clr-n-light-grayish-violet-app-bg);
+  position: relative;
+  width: 238px;
+  height: 25rem;
+  top: 2%;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  border-radius: var(--br-phone-bottom);
+  padding: 0.5rem;
+  display: flex; /*so that I could get the dog images to the right*/
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.message {
+  border-radius: var(--br-messages);
+  width: 60%;
+  padding: 0.3rem 0.5rem;
+}
+.message p {
+  font-size: 0.54rem;
+}
+.dark {
+  background-color: hsl(270, 24%, 92%);
+  color: var(--clr-p-moderate-violet-chat-on-left);
+}
+.white {
+  background-color: var(--clr-n-white);
+  margin-left: auto;
+}
+
+.dog-images {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  justify-content: end;
+}
+.dog-images img {
+  border-radius: var(--br-messages);
+  width: 20%;
+}
+.message-sml {
+  width: 40%;
+}
+.price-container {
+  border-radius: var(--br-price-container);
+  background: var(--clr-linear-g-price-container);
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  color: var(--clr-n-white);
+}
+.price-container-left {
+  display: flex;
+  gap: 0.5rem;
+}
+.radio-circle {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: solid 1px var(--clr-n-very-light-magenta-radio-button-outline);
+  border-radius: var(--br-circle);
+}
+.price-container p {
+  font-size: 0.6rem;
+}
+.arrow-dark {
+  background-color: var(--clr-n-very-dark-desaturated-violet-submit-btn-bg);
+  padding: 0.5rem;
+  border-radius: var(--br-circle);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.arrow-dark .arrow {
+  transform: rotate(314deg);
+  -webkit-transform: rotate(314deg);
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-n-white);
+  padding: 0.4rem;
+  border-radius: var(--br-input);
+  margin-top: 0.4rem;
+}
+input {
+  border: none;
+}
+input::placeholder {
+  color: var(--clr-p-grayish-blue-placeholder-text);
+  font-size: 0.6rem;
+  padding-left: 0.8rem;
+}
+
+/*------------------
+     TYPE-CONTENT
+-------------------*/
+.type-content {
+  text-align: center;
+  width: 85%;
+  margin: 0 auto 4rem auto;
+}
+.bg-color-desktop {
+  display: none;
+}
+
+/*?---------------------
+/*?     **Bonus**: See the chat interface animate on the initial load*
+/*?---------------------*/
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.message-1 {
+  animation: slideInLeft 1s ease-in-out;
+}
+.message-2 {
+  animation: slideInLeft 3s ease-in-out;
+}
+.message-3 {
+  animation: slideInLeft 6s ease-in-out;
+}
+.message-4 {
+  animation: slideInLeft 11s ease-in-out;
+}
+.message-5 {
+  animation: slideInLeft 16s ease-in-out;
+}
+
+/*!---------------------
+/*!     MEDIA QUERIES
+/*!---------------------*/
+
+@media (min-width: 568px) {
+  .type-content {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  main {
+    display: flex;
+  }
+  .hero .bg-color {
+    width: 100dvw;
+    height: 90dvh;
+    border-radius: var(--br-hero-bg-desktop);
+    margin-left: -25rem;
+  }
+  .type-content {
+    margin-top: 10rem;
+    text-align: left;
+    padding-inline: 2em;
+    position: relative;
+    z-index: 1;
+  }
+}
+@media (min-width: 1000px) {
+  .hero .bg-color {
+    margin: 0 0 0 -4rem;
+    height: 42rem;
+    width: 26rem;
+    border-radius: 0 0 42rem 42rem;
+  }
+  .phone {
+    top: 8rem;
+    left: 80%;
+  }
+  .type-content {
+    width: 33rem;
+    margin: 18rem 0 0 6rem;
+  }
+  .bg-color-desktop {
+    display: block;
+    height: 42rem;
+    width: 46rem;
+    border-radius: 42rem 42rem 0 0;
+    background: hsl(270, 14%, 95%);
+    margin: 6rem 0 0 -17rem;
+    position: relative;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    max-width: 1440px;
+  }
+  .phone {
+    left: 125%;
+  }
+  .type-content {
+    width: 23rem;
+    margin: 18rem 0 0 14rem;
+  }
+  .type-content p {
+    font-size: 0.61rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .bg-color {
+    margin: 0 0 0 -8rem;
+  }
+  .bg-color-desktop {
+    margin-left: -5.3rem;
+  }
+}
